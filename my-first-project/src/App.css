@@ -25,6 +25,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  font-weight: 300;
 }
 
 .right-section {
