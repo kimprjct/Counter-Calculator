@@ -1,3 +1,4 @@
+/* General Styling */
 body {
   font-family: 'Courier New', monospace;
   background-color: gray;
@@ -14,54 +15,44 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center; /* Centers items inside */
+  
   gap: 60px;
   padding: 20px;
   width: 100%;
   max-width: 1200px;
-  /* Adding flex-wrap to allow the items to wrap in mobile */
-  flex-wrap: wrap;
 }
 
 .left-section {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 100%; /* Ensure the left section takes full width */
-  max-width: 500px; /* Limit max width for a neat layout */
-  text-align: center;
 }
 
 .right-section {
   flex: 1;
-  display: none; /* Hide right section for simplicity in mobile view */
 }
 
+/* Card Styling */
 .card {
   text-align: center;
   background: #d2a679;
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-  width: 100%; /* Make the card fill the container */
-  max-width: 400px;
+  width: 400px;
 }
 
 .calculator-card {
-  width: 100%;
+  width: 400px;
   padding-bottom: 30px;
 }
 
+/* Button Groups */
 .button-group {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-bottom: 10px;
-}
-
-.reset {
-  display: block;
-  width: 50%;
-  margin: 10px auto 0;
 }
 
 .operator-group {
@@ -71,15 +62,38 @@ body {
   margin-top: 10px;
 }
 
-.input-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 10px;
-  width: 100%;
+/* Button Styles */
+button {
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
+.increment,
+.decrement,
+.operator {
+  width: 100px; /* Make buttons shorter */
+}
+
+.increment,
+.decrement {
+  font-size: 16px; /* Increase font size slightly for clarity */
+}
+
+.operator {
+  width: 50px; /* Smaller width for operators */
+  font-size: 18px; /* Slightly larger font for arithmetic operations */
+}
+
+/* Reset Button */
+.reset {
+  display: block;
+  width: 50%;
+  margin: 10px auto 0;
+}
+
+/* Input Fields */
 .input-field {
   width: 80%;
   padding: 12px;
@@ -96,26 +110,7 @@ body {
   opacity: 1;
 }
 
-.remove-input {
-  background: red;
-  color: white;
-  border: none;
-  padding: 6px 10px;
-  font-size: 14px;
-  font-weight: bold;
-  border-radius: 50%;
-  cursor: pointer;
-  height: 28px;
-  width: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.remove-input:hover {
-  background: darkred;
-}
-
+/* Add New Input Button */
 .add-input {
   display: block;
   margin: 10px auto;
@@ -132,45 +127,44 @@ body {
   background-color: #45a049;
 }
 
+/* Result Box */
 .result-box {
   font-size: 24px;
   font-weight: bold;
   margin-top: 15px;
 }
 
-/* Mobile Optimization */
+/* Mobile-Specific Button and Layout Adjustments */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column; /* Stack content vertically */
-    align-items: center; /* Center the content */
-    gap: 20px; /* Reduce space between sections */
-  }
-
-  .left-section {
-    width: 100%; /* Full width for mobile */
-    max-width: none; /* Remove max-width restriction */
-  }
-
-  .card {
-    width: 100%; /* Card should fill the container */
-    max-width: 350px; /* Limit card width on mobile */
-  }
-
   .button-group {
-    flex-direction: column; /* Stack buttons vertically on mobile */
+    flex-direction: column; /* Stack the increment and decrement buttons */
     gap: 5px;
   }
 
+  .increment,
+  .decrement {
+    width: 80%; /* Make the buttons take more space horizontally */
+    padding: 10px; /* Adjust padding for mobile */
+  }
+
   .operator-group {
-    flex-direction: column; /* Stack operator buttons vertically on mobile */
+    flex-direction: column; /* Stack operator buttons vertically */
     gap: 10px;
   }
 
-  .input-field {
-    width: 90%; /* Slightly increase width for input fields */
+  .operator {
+    width: 80%; /* Buttons will take full width on mobile */
+    font-size: 20px; /* Adjust font size for better readability */
   }
 
-  .result-box {
-    font-size: 20px; /* Adjust result font size for mobile */
+  /* Reset Button */
+  .reset {
+    width: 60%; /* Adjust the reset button to take more space */
+    padding: 12px;
+    font-size: 16px; /* Increase font size for clarity */
+  }
+
+  .add-input {
+    width: 80%; /* Ensure "Add New Input" button is more compact */
   }
 }
