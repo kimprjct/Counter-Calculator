@@ -18,16 +18,22 @@ body {
   padding: 20px;
   width: 100%;
   max-width: 1200px;
+  /* Adding flex-wrap to allow the items to wrap in mobile */
+  flex-wrap: wrap;
 }
 
 .left-section {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%; /* Ensure the left section takes full width */
+  max-width: 500px; /* Limit max width for a neat layout */
+  text-align: center;
 }
 
 .right-section {
   flex: 1;
+  display: none; /* Hide right section for simplicity in mobile view */
 }
 
 .card {
@@ -36,11 +42,12 @@ body {
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-  width: 400px;
+  width: 100%; /* Make the card fill the container */
+  max-width: 400px;
 }
 
 .calculator-card {
-  width: 400px;
+  width: 100%;
   padding-bottom: 30px;
 }
 
@@ -129,4 +136,41 @@ body {
   font-size: 24px;
   font-weight: bold;
   margin-top: 15px;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center the content */
+    gap: 20px; /* Reduce space between sections */
+  }
+
+  .left-section {
+    width: 100%; /* Full width for mobile */
+    max-width: none; /* Remove max-width restriction */
+  }
+
+  .card {
+    width: 100%; /* Card should fill the container */
+    max-width: 350px; /* Limit card width on mobile */
+  }
+
+  .button-group {
+    flex-direction: column; /* Stack buttons vertically on mobile */
+    gap: 5px;
+  }
+
+  .operator-group {
+    flex-direction: column; /* Stack operator buttons vertically on mobile */
+    gap: 10px;
+  }
+
+  .input-field {
+    width: 90%; /* Slightly increase width for input fields */
+  }
+
+  .result-box {
+    font-size: 20px; /* Adjust result font size for mobile */
+  }
 }
