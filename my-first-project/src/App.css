@@ -1,10 +1,9 @@
-/* General Styling */
+
 body {
   font-family: 'Courier New', monospace;
   background-color: gray; 
   display: flex;
   justify-content: center;
-  align-items: center; /* Centers vertically */
   min-height: 100vh;
   margin: 0;
   overflow: auto; 
@@ -12,20 +11,20 @@ body {
 
 .container {
   display: flex;
-  flex-direction: column; /* Stacks elements vertically for mobile */
-  justify-content: center;
-  align-items: center; /* Center align the content */
-  gap: 20px;
+  flex-direction: row; 
+  justify-content: center; 
+  align-items: flex-start; 
+  gap: 60px; 
   padding: 20px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1200px; 
 }
 
 .left-section {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  align-items: center; /* Centers content inside left-section */
+  margin-left: -50px; 
 }
 
 .right-section {
@@ -33,38 +32,37 @@ body {
   margin-left: 40px; 
 }
 
-/* Card Styling */
 .card {
   text-align: center;
   background: #d2a679;
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-  width: 400px;
+  width: 400px; 
 }
 
 .calculator-card {
-  width: 400px;
-  padding-bottom: 30px;
+  width: 400px; 
+  padding-bottom: 30px; 
 }
 
 .button-group {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-bottom: 10px;
+  gap: 10px; 
+  margin-bottom: 10px; 
 }
 
 .reset {
   display: block;
-  width: 50%;
+  width: 50%; 
   margin: 10px auto 0;
 }
 
 .operator-group {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 15px; 
   margin-top: 10px;
 }
 
@@ -78,11 +76,11 @@ body {
 }
 
 .input-field {
-  width: 80%;
+  width: 80%; 
   padding: 12px;
   font-size: 14px;
   border-radius: 5px;
-  border: 2px solid black;
+  border: 2px solid black; 
   text-align: center;
   background-color: white;
   color: black;
@@ -135,50 +133,72 @@ body {
   margin-top: 15px;
 }
 
-/* Mobile-Specific Adjustments */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column; /* Stack content vertically */
-    align-items: center;
-  }
 
-  .left-section {
-    align-items: center; /* Center the items inside the left-section */
-  }
+.todo-list {
+  list-style: none;
+  padding: 0;
+  width: 450px; 
+}
 
-  .card {
-    width: 100%; /* Make the card width responsive on mobile */
-    max-width: 400px;
-  }
+.todo-list li {
+  padding: 8px;
+  margin: 4px 0;
+  background: gray;
+  border-radius: 5px;
+  text-align: left;
+  word-wrap: break-word;
+}
 
-  .button-group {
-    flex-direction: column; /* Stack buttons vertically */
-    gap: 10px;
-  }
+.todo-list .completed {
+  text-decoration: line-through;
+  color: gray;
+}
 
-  .operator-group {
-    flex-direction: column; /* Stack operator buttons vertically */
-    gap: 10px;
-  }
+.todo-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
 
-  .increment,
-  .decrement {
-    width: 80%; /* Make buttons larger for mobile */
-    padding: 10px;
-  }
+.todo-table th, .todo-table td {
+  border: 1px solid #000;
+  padding: 8px;
+  text-align: left;
+}
 
-  .operator {
-    width: 80%; /* Make operator buttons larger for mobile */
-    font-size: 18px;
-  }
+.todo-table th {
+  background-color: #b98a60;
+  color: white;
+  text-align: center; 
+}
 
-  .reset {
-    width: 80%;
-    padding: 12px;
-    font-size: 16px;
-  }
+.todo-table td {
+  text-align: left;
+}
 
-  .add-input {
-    width: 80%; /* Make add input button larger on mobile */
-  }
+.todo-table .completed {
+  color: green;
+  font-weight: bold;
+}
+
+.todo-table .in-progress {
+  color: red;
+  font-weight: bold;
+}
+
+/* Add Input Button */
+.add-input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 15px;
+  font-size: 14px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-input:hover {
+  background-color: #45a049;
 }
