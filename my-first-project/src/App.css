@@ -1,8 +1,7 @@
 
 body {
   font-family: 'Courier New', monospace;
-  background-color: gray; 
-  display: flex;
+  background: linear-gradient(90deg, #667722 0%, #112233 50%, #554422 100%);
   justify-content: center;
   min-height: 100vh;
   margin: 0;
